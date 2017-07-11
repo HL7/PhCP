@@ -1,0 +1,49 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="PhCP-Intervention-List"/>
+    <url value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Intervention-List"/>
+    <name value="PhCP Intervention List"/>
+    <status value="draft"/>
+    <publisher value="Lantana Consulting Group"/>
+    <contact>
+        <name value="Rick Geimer"/>
+        <telecom>
+            <system value="phone"/>
+            <value value="206-592-2443"/>
+            <use value="work"/>
+        </telecom>
+        <telecom>
+            <system value="email"/>
+            <value value="rick.geimer@lantanagroup.com"/>
+            <use value="work"/>
+        </telecom>
+    </contact>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <contextType value="resource"/>
+    <context value="List"/>
+    <type value="List"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/List"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="9494-00001">
+            <path value="List"/>
+        </element>
+        <element>
+            <path value="List.code"/>
+            <short value="code"/>
+            <definition
+                value="MAY contain zero or one [0..1] code=&quot;362956003&quot; (CodeSystem: SNOMED CT urn:oid:2.16.840.1.113883.6.96) (CONF:3321-9)."/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="urn:oid:2.16.840.1.113883.6.96"/>
+                    <code value="362956003"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+    </differential>
+</StructureDefinition>

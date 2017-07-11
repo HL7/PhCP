@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="PhCP-Composition" />
+  <meta>
+    <lastUpdated value="2017-07-09T17:52:47.298-04:00" />
+  </meta>
+  <url value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Composition" />
+  <name value="PhCP-Composition" />
+  <status value="draft" />
+  <date value="2017-07-07T15:27:47.5729301-04:00" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Composition" />
+  <type value="Composition" />
+  <baseDefinition value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Care-Plan" />
+  <differential>
+    <element id="Composition.event">
+      <path value="Composition.event" />
+      <max value="1" />
+    </element>
+    <element id="Composition.section:payerSectionSlice">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="payerSectionSlice" />
+    </element>
+    <element id="Composition.section:payerSectionSlice.code">
+      <path value="Composition.section.code" />
+      <fixedCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="48768-6" />
+        </coding>
+        <text value="Payers Section" />
+      </fixedCodeableConcept>
+    </element>
+  </differential>
+</StructureDefinition>

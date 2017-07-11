@@ -1,0 +1,118 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="PhCP-Composition"/>
+    <url value="http://hl7.org/fhir/us/ephcp/StructureDefinition/PhCP-Composition"/>
+    <name value="Pharmacist Care Plan Document (FHIR)"/>
+    <status value="draft"/>
+    <publisher value="Lantana Consulting Group"/>
+    <contact>
+        <name value="Rick Geimer"/>
+        <telecom>
+            <system value="phone"/>
+            <value value="206-592-2443"/>
+            <use value="work"/>
+        </telecom>
+        <telecom>
+            <system value="email"/>
+            <value value="rick.geimer@lantanagroup.com"/>
+            <use value="work"/>
+        </telecom>
+    </contact>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <contextType value="resource"/>
+    <context value="Composition"/>
+    <type value="Composition"/>
+    <baseDefinition value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Care-Plan"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="9131-00001">
+            <path value="Composition"/>
+        </element>
+        <element>
+            <path value="Composition.event"/>
+            <short value="event"/>
+            <definition value="SHOULD contain zero or more [0..*] event (CONF:3321-4)."/>
+            <min value="0"/>
+            <max value="*"/>
+        </element>
+        <element id="9131-03">
+            <path value="Composition.event.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <definition
+                value="The event, if present, SHALL contain exactly one [1..1] C-CDA on FHIR Performer (identifier: http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Performer) (CONF:3321-5)."
+            />
+        </element>
+        <element>
+            <path value="Composition.event.extension"/>
+            <sliceName value="extension_slice_pos1"/>
+            <short value="extension"/>
+            <definition
+                value="The event, if present, SHALL contain exactly one [1..1] C-CDA on FHIR Performer (identifier: http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Performer) (CONF:3321-5)."/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Performer"
+                />
+            </type>
+        </element>
+        <element>
+            <path value="Composition.event.code"/>
+            <short value="code"/>
+            <definition
+                value="The event, if present, MAY contain zero or more [0..*] code (CONF:3321-6)."/>
+            <min value="0"/>
+            <max value="*"/>
+        </element>
+        <element id="9131-02">
+            <path value="Composition.section"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="code"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <definition value="SHOULD contain exactly one [1..1] section (CONF:3321-1) such that it"
+            />
+        </element>
+        <element>
+            <path value="Composition.section"/>
+            <sliceName value="section_slice_pos2"/>
+            <short value="section"/>
+            <definition value="SHOULD contain exactly one [1..1] section (CONF:3321-1) such that it"/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element>
+            <path value="Composition.section.title"/>
+            <short value="title"/>
+            <definition value="SHALL contain exactly one [1..1] title (CONF:3321-2)."/>
+            <min value="1"/>
+            <max value="1"/>
+        </element>
+        <element>
+            <path value="Composition.section.code"/>
+            <short value="code"/>
+            <definition
+                value="SHALL contain exactly one [1..1] code=&quot;48768-6&quot; (CodeSystem: LOINC urn:oid:2.16.840.1.113883.6.1) (CONF:3321-3)."/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="urn:oid:2.16.840.1.113883.6.1"/>
+                    <code value="48768-6"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+    </differential>
+</StructureDefinition>

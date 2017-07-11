@@ -1,0 +1,45 @@
+{
+  "tool": "jekyll",
+  "paths": {
+    "resources": [
+      "resources"
+    ],
+    "pages": "pages",
+    "temp": "temp",
+    "output": "output",
+    "qa": "qa",
+    "specification": "http://hl7-fhir.github.io/"
+  },
+  "dependencyList": [{
+    "name": "USCore",
+    "location": "http://hl7.org/fhir/us/core/"
+  },{
+    "name": "ccda",
+    "location": "https://github.com/HL7/ccda-on-fhir",
+    "source": "ccda-output"
+  }],
+  "defaults": {
+    "Any": {
+      "template-format": "instance-template-format.html",
+      "template-base": "instance-template-base.html"
+    },
+    "StructureDefinition": {
+      "template-base": "instance-template-sd.html"
+    }
+  },
+  "canonicalBase": "http://hl7.org/fhir/us/phcp",
+  "source": "ImplementationGuide/ImplementationGuide_3321.xml",
+  "sct-edition": "http://snomed.info/sct/731000124108",
+  "special-urls": [],
+  "resources": {
+    "StructureDefinition/PhCP-Composition": {
+      "base": "StructureDefinition-PhCP-Composition.html"
+    },
+    "StructureDefinition/PhCP-Intervention-List": {
+      "base": "StructureDefinition-PhCP-Intervention-List.html"
+    },
+    "StructureDefinition/PhCP-Intervention-RequestGroup": {
+      "base": "StructureDefinition-PhCP-Intervention-RequestGroup.html"
+    }
+  }
+}
