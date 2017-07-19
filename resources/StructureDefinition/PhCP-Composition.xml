@@ -2,21 +2,18 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="PhCP-Composition" />
   <meta>
-    <lastUpdated value="2017-07-09T17:52:47.298-04:00" />
+    <lastUpdated value="2017-07-19T18:03:23.737-04:00" />
   </meta>
   <url value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Composition" />
   <name value="PhCP-Composition" />
   <status value="draft" />
-  <publisher value="Lantana Consulting Group"/>
   <contact>
     <name value="Rick Geimer" />
     <telecom>
       <system value="email" />
       <value value="rick.geimer@lantanagroup.com" />
-      <use value="work" />
     </telecom>
   </contact>
-  <date value="2017-07-07T15:27:47.5729301-04:00" />
   <fhirVersion value="3.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -26,26 +23,114 @@
   <baseDefinition value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Care-Plan" />
   <derivation value="constraint"/>
   <differential>
+    <element id="Composition.extension:extension_slice_pos2">
+      <path value="Composition.extension" />
+      <sliceName value="extension_slice_pos2" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos2.url">
+      <path value="Composition.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Data-Enterer" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos3">
+      <path value="Composition.extension" />
+      <sliceName value="extension_slice_pos3" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos3.url">
+      <path value="Composition.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Informant" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos4">
+      <path value="Composition.extension" />
+      <sliceName value="extension_slice_pos4" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos4.url">
+      <path value="Composition.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Information-Recipient" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos5">
+      <path value="Composition.extension" />
+      <sliceName value="extension_slice_pos5" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos5.url">
+      <path value="Composition.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Participant" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos6">
+      <path value="Composition.extension" />
+      <sliceName value="extension_slice_pos6" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos6.url">
+      <path value="Composition.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Performer" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos7">
+      <path value="Composition.extension" />
+      <sliceName value="extension_slice_pos7" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos7.url">
+      <path value="Composition.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Authorization" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos8">
+      <path value="Composition.extension" />
+      <sliceName value="extension_slice_pos8" />
+    </element>
+    <element id="Composition.extension:extension_slice_pos8.url">
+      <path value="Composition.extension.url" />
+      <fixedUri value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-In-Fulfillment-Of-Order" />
+    </element>
     <element id="Composition.event">
       <path value="Composition.event" />
       <max value="1" />
     </element>
+    <element id="Composition.section:interventions_section_slice/phcp_interventions_section_slice">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
+      <path value="Composition.section" />
+      <sliceName value="interventions_section_slice/phcp_interventions_section_slice" />
+    </element>
+    <element id="Composition.section:interventions_section_slice/phcp_interventions_section_slice.entry">
+      <path value="Composition.section.entry"/>
+      <short value="entry"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Intervention-List"/>
+      </type>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Intervention-RequestGroup"/>
+      </type>
+    </element>
+    
+    
+    
     <element id="Composition.section:payerSectionSlice">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
         <valueString value="Section" />
       </extension>
       <path value="Composition.section" />
       <sliceName value="payerSectionSlice" />
+      <label value="Payer Section" />
+      <short value="Payer Section" />
+      <max value="1" />
+    </element>
+    <element id="Composition.section:payerSectionSlice.title">
+      <path value="Composition.section.title" />
+      <short value="title" />
+      <min value="1" />
     </element>
     <element id="Composition.section:payerSectionSlice.code">
-      <path value="Composition.section.code" />
-      <fixedCodeableConcept>
+      <path value="Composition.section.code"/>
+      <label value="Payers"/>
+      <short value="Payers"/>
+      <min value="1"/>
+      <patternCodeableConcept>
         <coding>
-          <system value="http://loinc.org" />
-          <code value="48768-6" />
+          <system value="http://loinc.org"/>
+          <code value="48768-6"/>
         </coding>
-        <text value="Payers Section" />
-      </fixedCodeableConcept>
+      </patternCodeableConcept>
     </element>
   </differential>
 </StructureDefinition>
