@@ -8,15 +8,15 @@
     "temp": "temp",
     "output": "output",
     "qa": "qa",
-    "specification": "http://hl7-fhir.github.io/"
+    "specification": "http://hl7.org/fhir/STU3/"
   },
   "dependencyList": [{
     "name": "USCore",
     "location": "http://hl7.org/fhir/us/core/"
   },{
     "name": "ccda",
-    "location": "https://github.com/HL7/ccda-on-fhir",
-    "source": "ccda-output"
+    "location": "http://hl7.org/fhir/ccda",
+    "source": "ccda-definitions"
   }],
   "defaults": {
     "Any": {
