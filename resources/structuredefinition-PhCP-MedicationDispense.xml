@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-07-20T15:38:19.586-04:00" />
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="phx" />
+  </extension>
+  <url value="StructureDefinition/PhCP-MedicationDispense" />
+  <name value="PhCP-MedicationDispense" />
+  <status value="draft" />
+  <date value="2017-07-20T15:29:09.2599666-04:00" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="MedicationDispense" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MedicationDispense" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="MedicationDispense.status">
+      <path value="MedicationDispense.status" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.performer">
+      <path value="MedicationDispense.performer" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.authorizingPrescription">
+      <path value="MedicationDispense.authorizingPrescription" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.quantity:SimpleQuantity">
+      <path value="MedicationDispense.quantity" />
+      <sliceName value="SimpleQuantity" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.daysSupply:SimpleQuantity">
+      <path value="MedicationDispense.daysSupply" />
+      <sliceName value="SimpleQuantity" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.whenHandedOver">
+      <path value="MedicationDispense.whenHandedOver" />
+      <min value="1" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="PhCP-Composition" />
   <meta>
-    <lastUpdated value="2017-07-19T18:03:23.737-04:00" />
+    <lastUpdated value="2017-07-20T17:37:33.308-04:00" />
   </meta>
   <url value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Composition" />
   <name value="PhCP-Composition" />
@@ -12,6 +12,7 @@
     <telecom>
       <system value="email" />
       <value value="rick.geimer@lantanagroup.com" />
+      <use value="work"/>
     </telecom>
   </contact>
   <fhirVersion value="3.0.1" />
@@ -27,45 +28,29 @@
       <path value="Composition.event" />
       <max value="1" />
     </element>
-    <element id="Composition.section">
-      <path value="Composition.section"/>
+    <element id="Composition.event.detail">
+      <path value="Composition.event.detail" />
       <slicing>
         <discriminator>
-          <type value="value"/>
-          <path value="code"/>
+          <type value="profile" />
+          <path value="reference" />
         </discriminator>
-        <rules value="open"/>
+        <rules value="open" />
       </slicing>
     </element>
-    <!--
-    <element id="Composition.section:interventions_section_slice">
-      <path value="Composition.section"/>
-      <slicing>
-        <discriminator>
-          <type value="profile"/>
-          <path value="entry.reference"/>
-        </discriminator>
-        <rules value="open"/>
-      </slicing>
-    </element>
-    <element id="Composition.section:interventions_section_slice/phcp_interventions_section_slice">
-      <path value="Composition.section" />
-      <sliceName value="interventions_section_slice/phcp_interventions_section_slice" />
-    </element>
-    <element id="Composition.section:interventions_section_slice/phcp_interventions_section_slice.entry">
-      <path value="Composition.section.entry"/>
-      <short value="entry"/>
+    <element id="Composition.event.detail:care_plan_slice">
+      <path value="Composition.event.detail"/>
+      <sliceName value="care_plan_slice"/>
+      <short value="Care Plan Detail"></short>
       <type>
         <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Intervention-List"/>
-      </type>
-      <type>
-        <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Intervention-RequestGroup"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CarePlan"/>
       </type>
     </element>
-    -->
     <element id="Composition.section:payer_section_slice">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Section" />
+      </extension>
       <path value="Composition.section" />
       <sliceName value="payer_section_slice" />
       <short value="Payer Section" />
