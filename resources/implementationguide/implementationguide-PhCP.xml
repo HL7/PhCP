@@ -41,6 +41,13 @@
                 <display value="PhCP Encounter"/>
             </sourceReference>
         </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/PhCP-CareCoordination"/>
+                <display value="PhCP CareCoordination"/>
+            </sourceReference>
+        </resource>
     </package>
     <page>
         <source value="http://test.com/IG/View/3321"/>

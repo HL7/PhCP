@@ -15,6 +15,9 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Encounter" />
   <derivation value="constraint" />
   <differential>
+    <element id="Encounter">
+      <path value="Encounter" />
+    </element>
     <element id="Encounter.type">
       <path value="Encounter.type" />
       <min value="1" />
@@ -23,8 +26,8 @@
       <path value="Encounter.participant" />
       <min value="1" />
     </element>
-    <element id="Encounter.participant.individual.reference">
-      <path value="Encounter.participant.individual.reference" />
+    <element id="Encounter.participant.individual">
+      <path value="Encounter.participant.individual" />
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />

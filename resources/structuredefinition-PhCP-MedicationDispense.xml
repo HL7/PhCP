@@ -15,6 +15,9 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MedicationDispense" />
   <derivation value="constraint" />
   <differential>
+    <element id="MedicationDispense">
+      <path value="MedicationDispense" />
+    </element>
     <element id="MedicationDispense.status">
       <path value="MedicationDispense.status" />
       <min value="1" />
