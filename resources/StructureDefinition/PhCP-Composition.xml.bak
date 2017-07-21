@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="PhCP-Composition" />
+  <meta>
+    <lastUpdated value="2017-07-19T18:03:23.737-04:00" />
+  </meta>
+  <url value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Composition" />
+  <name value="PhCP-Composition" />
+  <status value="draft" />
+  <contact>
+    <name value="Rick Geimer" />
+    <telecom>
+      <system value="email" />
+      <value value="rick.geimer@lantanagroup.com" />
+    </telecom>
+  </contact>
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Composition" />
+  <type value="Composition" />
+  <baseDefinition value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA-on-FHIR-Care-Plan" />
+  <derivation value="constraint"/>
+  <differential>
+    <element id="Composition.event">
+      <path value="Composition.event" />
+      <max value="1" />
+    </element>
+    <element id="Composition.section">
+      <path value="Composition.section"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="code"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+    </element>
+    <!--
+    <element id="Composition.section:interventions_section_slice">
+      <path value="Composition.section"/>
+      <slicing>
+        <discriminator>
+          <type value="profile"/>
+          <path value="entry.reference"/>
+        </discriminator>
+        <rules value="open"/>
+      </slicing>
+    </element>
+    <element id="Composition.section:interventions_section_slice/phcp_interventions_section_slice">
+      <path value="Composition.section" />
+      <sliceName value="interventions_section_slice/phcp_interventions_section_slice" />
+    </element>
+    <element id="Composition.section:interventions_section_slice/phcp_interventions_section_slice.entry">
+      <path value="Composition.section.entry"/>
+      <short value="entry"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Intervention-List"/>
+      </type>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Intervention-RequestGroup"/>
+      </type>
+    </element>
+    -->
+    <element id="Composition.section:payer_section_slice">
+      <path value="Composition.section" />
+      <sliceName value="payer_section_slice" />
+      <short value="Payer Section" />
+      <max value="1" />
+    </element>
+    <element id="Composition.section:payer_section_slice.title">
+      <path value="Composition.section.title" />
+      <short value="title" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:payer_section_slice.code">
+      <path value="Composition.section.code"/>
+      <short value="Payers"/>
+      <min value="1"/>
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org"/>
+          <code value="48768-6"/>
+        </coding>
+      </patternCodeableConcept>
+    </element>
+  </differential>
+</StructureDefinition>
