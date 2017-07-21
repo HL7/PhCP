@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="PhCP-CareCoordination"/>
+  <id value="PhCP-CareCoordination" />
+  <meta>
+    <lastUpdated value="2017-07-21T15:14:05.353-04:00" />
+  </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="pc" />
   </extension>
@@ -18,12 +21,21 @@
     <element id="Communication">
       <path value="Communication" />
     </element>
+    <element id="Communication.subject">
+      <path value="Communication.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" />
+      </type>
+    </element>
     <element id="Communication.recipient">
       <path value="Communication.recipient" />
       <min value="1" />
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
       </type>
     </element>
     <element id="Communication.sent">
@@ -36,6 +48,7 @@
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
       </type>
     </element>
     <element id="Communication.payload">

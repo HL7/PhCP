@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="2.16.840.1.113883.11.20.9.34"/>
+  <url value="http://hl7.org/fhir/us/phcp/ValueSet/2.16.840.1.113883.11.20.9.34"/>
+  <version value="1.0.0"/>
+  <name value="Patient Education"/>
+  <status value="draft"/>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="71388002"/>
+      </filter>
+    </include>
+  </compose>
+</ValueSet>

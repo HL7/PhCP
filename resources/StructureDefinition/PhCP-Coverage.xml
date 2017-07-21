@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="PhCP-Coverage" />
+  <meta>
+    <lastUpdated value="2017-07-21T16:17:58.997-04:00" />
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm" />
+  </extension>
+  <url value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Coverage" />
+  <name value="PhCP-Coverage" />
+  <status value="draft" />
+  <date value="2017-07-21T16:02:00.2312151-04:00" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Coverage" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Coverage" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Coverage">
+      <path value="Coverage" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.identifier">
+      <path value="Coverage.identifier" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.type">
+      <path value="Coverage.type" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.subscriber">
+      <path value="Coverage.subscriber" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" />
+      </type>
+    </element>
+    <element id="Coverage.subscriberId">
+      <path value="Coverage.subscriberId" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.payor">
+      <path value="Coverage.payor" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+      </type>
+    </element>
+    <element id="Coverage.grouping">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Group" />
+      </extension>
+      <path value="Coverage.grouping" />
+      <min value="1" />
+    </element>
+  </differential>
+</StructureDefinition>

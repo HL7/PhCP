@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="PhCP-Encounter"/>
+  <id value="PhCP-Encounter" />
+  <meta>
+    <lastUpdated value="2017-07-21T15:15:59.822-04:00" />
+  </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="pa" />
   </extension>
@@ -17,10 +20,19 @@
   <differential>
     <element id="Encounter">
       <path value="Encounter" />
+      <min value="1" />
     </element>
     <element id="Encounter.type">
       <path value="Encounter.type" />
       <min value="1" />
+    </element>
+    <element id="Encounter.subject">
+      <path value="Encounter.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" />
+      </type>
     </element>
     <element id="Encounter.participant">
       <path value="Encounter.participant" />
@@ -31,6 +43,7 @@
       <type>
         <code value="string" />
         <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
     </element>
     <element id="Encounter.period">

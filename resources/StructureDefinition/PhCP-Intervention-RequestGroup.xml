@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="PhCP-Intervention-RequestGroup" />
   <meta>
-    <lastUpdated value="2017-07-19T17:46:32.502-04:00" />
+    <lastUpdated value="2017-07-21T15:49:22.316-04:00" />
   </meta>
   <url value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Intervention-RequestGroup" />
   <name value="PhCP Intervention RequestGroup" />
@@ -30,8 +30,36 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/RequestGroup" />
   <derivation value="constraint" />
   <differential>
+    <element id="RequestGroup">
+      <path value="RequestGroup" />
+    </element>
+    <element id="RequestGroup.subject">
+      <path value="RequestGroup.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" />
+      </type>
+    </element>
+    <element id="RequestGroup.author">
+      <path value="RequestGroup.author" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+      </type>
+    </element>
+    <element id="RequestGroup.action">
+      <path value="RequestGroup.action" />
+      <min value="1" />
+    </element>
     <element id="RequestGroup.action.resource">
       <path value="RequestGroup.action.resource" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Referral-ProcedureRequest" />
+      </type>
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest" />

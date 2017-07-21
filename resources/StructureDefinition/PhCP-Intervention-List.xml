@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="PhCP-Intervention-List" />
   <meta>
-    <lastUpdated value="2017-07-19T17:48:46.302-04:00" />
+    <lastUpdated value="2017-07-21T15:34:23.339-04:00" />
   </meta>
   <url value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Intervention-List" />
   <name value="PhCP Intervention List" />
@@ -30,6 +30,9 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/List" />
   <derivation value="constraint" />
   <differential>
+    <element id="List">
+      <path value="List" />
+    </element>
     <element id="List.code">
       <path value="List.code" />
       <short value="code" />
@@ -40,6 +43,21 @@
         </coding>
       </patternCodeableConcept>
     </element>
+    <element id="List.subject">
+      <path value="List.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" />
+      </type>
+    </element>
+    <element id="List.encounter">
+      <path value="List.encounter" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Encounter" />
+      </type>
+    </element>
     <element id="List.entry">
       <path value="List.entry" />
       <min value="1" />
@@ -48,11 +66,19 @@
       <path value="List.entry.item" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationstatement" />
+        <targetProfile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-MedicationDispense" />
       </type>
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationDispense" />
+        <targetProfile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-CareCoordination" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Education-Procedure" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationstatement" />
       </type>
     </element>
   </differential>

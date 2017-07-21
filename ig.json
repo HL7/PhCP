@@ -39,6 +39,27 @@
     },
     "StructureDefinition/PhCP-Intervention-RequestGroup": {
       "base": "StructureDefinition-PhCP-Intervention-RequestGroup.html"
+    },
+    "StructureDefinition/PhCP-Encounter": {
+      "base": "StructureDefinition-PhCP-Encounter.html"
+    },
+    "StructureDefinition/PhCP-CareCoordination": {
+      "base": "StructureDefinition-PhCP-CareCoordination.html"
+    },
+    "StructureDefinition/PhCP-MedicationDispense": {
+      "base": "StructureDefinition-PhCP-MedicationDispense.html"
+    },
+    "StructureDefinition/PhCP-Education-Procedure": {
+      "base": "StructureDefinition-PhCP-Education-Procedure.html"
+    },
+    "StructureDefinition/PhCP-Referral-ProcedureRequest": {
+      "base": "StructureDefinition-PhCP-Referral-ProcedureRequest.html"
+    },
+    "StructureDefinition/PhCP-Coverage": {
+      "base": "StructureDefinition-PhCP-Coverage.html"
+    },
+    "ValueSet/2.16.840.1.113883.11.20.9.34": {
+      "base": "ValueSet-2.16.840.1.113883.11.20.9.34.html" 
     }
   }
 }

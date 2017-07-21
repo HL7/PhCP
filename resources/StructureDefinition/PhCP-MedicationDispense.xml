@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="PhCP-MedicationDispense"/>
+  <id value="PhCP-MedicationDispense" />
   <meta>
-    <lastUpdated value="2017-07-20T15:38:19.586-04:00" />
+    <lastUpdated value="2017-07-21T16:38:31.31-04:00" />
   </meta>
   <url value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-MedicationDispense" />
   <name value="PhCP-MedicationDispense" />
@@ -17,18 +17,56 @@
   <differential>
     <element id="MedicationDispense">
       <path value="MedicationDispense" />
+      <min value="1" />
     </element>
     <element id="MedicationDispense.status">
       <path value="MedicationDispense.status" />
       <min value="1" />
     </element>
+    <element id="MedicationDispense.medication[x]">
+      <path value="MedicationDispense.medication[x]" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication" />
+      </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="MedicationCode" />
+        </extension>
+        <strength value="preferred" />
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/us/core/ValueSet/us-core-medication-codes" />
+        </valueSetReference>
+      </binding>
+    </element>
     <element id="MedicationDispense.performer">
       <path value="MedicationDispense.performer" />
       <min value="1" />
     </element>
+    <element id="MedicationDispense.performer.actor">
+      <path value="MedicationDispense.performer.actor" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+      </type>
+    </element>
+    <element id="MedicationDispense.performer.onBehalfOf">
+      <path value="MedicationDispense.performer.onBehalfOf" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization" />
+      </type>
+    </element>
     <element id="MedicationDispense.authorizingPrescription">
       <path value="MedicationDispense.authorizingPrescription" />
       <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest" />
+      </type>
     </element>
     <element id="MedicationDispense.quantity:SimpleQuantity">
       <path value="MedicationDispense.quantity" />
