@@ -1,12 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="PhCP-MedicationDispense"/>
   <meta>
     <lastUpdated value="2017-07-20T15:38:19.586-04:00" />
   </meta>
-  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
-    <valueCode value="phx" />
-  </extension>
-  <url value="StructureDefinition/PhCP-MedicationDispense" />
+  <url value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-MedicationDispense" />
   <name value="PhCP-MedicationDispense" />
   <status value="draft" />
   <date value="2017-07-20T15:29:09.2599666-04:00" />

@@ -1,1 +1,50 @@
-<ImplementationGuide xmlns="http://hl7.org/fhir"><id value="3321" /><url value="http://hl7.org/fhir/us/phcp/ImplementationGuide/3321" /><name value="Pharmacist Services and Summaries (FHIR)" /><status value="draft" /><package><name value="Profiles in this Implementation Guide" /><resource><example value="false" /><sourceReference><reference value="StructureDefinition/PhCP-Intervention-List" /><display value="PhCP Intervention List" /></sourceReference></resource><resource><example value="false" /><sourceReference><reference value="StructureDefinition/PhCP-Intervention-RequestGroup" /><display value="PhCP Intervention RequestGroup" /></sourceReference></resource><resource><example value="false" /><sourceReference><reference value="StructureDefinition/PhCP-Composition" /><display value="Pharmacist Care Plan Document (FHIR)" /></sourceReference></resource></package><page><source value="http://test.com/IG/View/3321" /><title value="Pharmacist Services and Summaries (FHIR)" /><kind value="page" /></page></ImplementationGuide>
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+    <id value="3321"/>
+    <url value="http://hl7.org/fhir/us/phcp/ImplementationGuide/3321"/>
+    <name value="Pharmacist Services and Summaries (FHIR)"/>
+    <status value="draft"/>
+    <package>
+        <name value="Profiles in this Implementation Guide"/>
+        
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/PhCP-Composition"/>
+                <display value="Pharmacist Care Plan Document (FHIR)"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/PhCP-Intervention-List"/>
+                <display value="PhCP Intervention List"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/PhCP-Intervention-RequestGroup"/>
+                <display value="PhCP Intervention RequestGroup"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/PhCP-MedicationDispense"/>
+                <display value="PhCP MedicationDispense"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="false"/>
+            <sourceReference>
+                <reference value="StructureDefinition/PhCP-Encounter"/>
+                <display value="PhCP Encounter"/>
+            </sourceReference>
+        </resource>
+    </package>
+    <page>
+        <source value="http://test.com/IG/View/3321"/>
+        <title value="Pharmacist Services and Summaries (FHIR)"/>
+        <kind value="page"/>
+    </page>
+</ImplementationGuide>

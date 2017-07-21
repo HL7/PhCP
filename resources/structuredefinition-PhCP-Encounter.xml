@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="PhCP-Encounter"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="pa" />
+  </extension>
+  <url value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Encounter" />
+  <name value="PhCP-Encounter" />
+  <status value="draft" />
+  <date value="2017-07-21T10:50:18.3880172-04:00" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Encounter" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Encounter" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Encounter.type">
+      <path value="Encounter.type" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.participant">
+      <path value="Encounter.participant" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.participant.individual.reference">
+      <path value="Encounter.participant.individual.reference" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner" />
+      </type>
+    </element>
+    <element id="Encounter.period">
+      <path value="Encounter.period" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.reason">
+      <path value="Encounter.reason" />
+      <min value="1" />
+    </element>
+  </differential>
+</StructureDefinition>
