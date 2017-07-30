@@ -60,6 +60,9 @@
     },
     "ValueSet/2.16.840.1.113883.11.20.9.34": {
       "base": "ValueSet-2.16.840.1.113883.11.20.9.34.html" 
+    },
+    "Composition/PhCP-Composition-Example": {
+      "base": "Composition-PhCP-Composition-Example.html"
     }
   }
 }
