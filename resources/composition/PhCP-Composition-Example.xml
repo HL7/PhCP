@@ -1,14 +1,13 @@
 <Composition xmlns="http://hl7.org/fhir">
-    <id value="CCDA-on-FHIR-Care-Plan-Example"/>
+    <id value="PhCP-Composition-Example"/>
     <meta>
         <versionId value="1"/>
-        <lastUpdated value="2016-06-15T08:16:14Z"/>
-        <profile value="http://hl7.org/fhir/ccda/StructureDefinition/CCDA_on_FHIR_Care_Plan"/>
+        <profile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Composition"/>
     </meta>
     <text>
         <status value="generated"/>
         <div xmlns="http://www.w3.org/1999/xhtml">
-            <p>Care Plan document for Amy Shaw</p>
+            <p>Pharmacist Care Plan document for Amy Shaw</p>
             <p>Managed by Community Health and Hospitals</p>
         </div>
     </text>
@@ -219,6 +218,11 @@
                 </table>
             </div>
         </text>
+        <!--
+        <entry>
+            <reference value="List/PhCP-Intervention-List-Example"/>
+        </entry>
+        -->
     </section>
     <!--  Health Status Evaluations and Outcomes Section Narrative  -->
     <section>

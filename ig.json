@@ -63,6 +63,9 @@
     },
     "Composition/PhCP-Composition-Example": {
       "base": "Composition-PhCP-Composition-Example.html"
+    },
+    "Composition/PhCP-Intervention-List-Example": {
+      "base": "PhCP-Intervention-List-Example.html"
     }
   }
 }

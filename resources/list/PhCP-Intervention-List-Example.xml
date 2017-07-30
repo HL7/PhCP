@@ -1,0 +1,26 @@
+<List xmlns="http://hl7.org/fhir">
+    <id value="PhCP-Intervention-List-Example"/>
+    <meta>
+        <versionId value="1"/>
+        <profile value="http://hl7.org/fhir/us/phcp/StructureDefinition/PhCP-Intervention-List"/>
+    </meta>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:uuid:1040f76d-d877-4f0a-8564-c0b508c57085"/>
+    </identifier>
+    <status value="current"/>
+    <mode value="snapshot"/>
+    <code>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="362956003"/>
+            <display value="Procedure/intervention"/>
+        </coding>
+    </code>
+    <date value="2016-11-25"/>
+    <entry>
+        <item>
+            <reference value="MedicationRequest/MedicationRequest-uscore-mo1"/>
+        </item>
+    </entry>
+</List>
