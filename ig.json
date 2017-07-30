@@ -15,7 +15,8 @@
     "location": "http://hl7.org/fhir/us/core/"
   },{
     "name": "ccda",
-    "location": "http://build.fhir.org/ig/HL7/ccda-on-fhir/"
+    "location": "http://build.fhir.org/ig/HL7/ccda-on-fhir/",
+    "source": "ccda-definitions"
   }],
   "defaults": {
     "Any": {

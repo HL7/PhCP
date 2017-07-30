@@ -5,7 +5,7 @@
     <status value="draft"/>
     <package>
         <name value="Profiles in this Implementation Guide"/>
-        
+
         <resource>
             <example value="false"/>
             <sourceReference>
@@ -79,37 +79,6 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Composition/PhCP-Composition-Example"/>
-                <display value="PhCP-Composition-Example.xml"/>
-            </sourceReference>
-            <exampleFor>
-                <reference value="StructureDefinition/PhCP-Composition"/>
-                <display value="PhCP Composition"/>
-            </exampleFor>
-        </resource>
-        <!--
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="List/PhCP-Intervention-List-Example"/>
-                <display value="PhCP-Intervention-List-Example.xml"/>
-            </sourceReference>
-            <exampleFor>
-                <reference value="StructureDefinition/PhCP-Intervention-List"/>
-                <display value="PhCP Intervention List"/>
-            </exampleFor>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/MedicationRequest-uscore-mo1"/>
-                <display value="MedicationRequest-uscore-mo1.xml"/>
-            </sourceReference>
-        </resource>
-        -->
-        <resource>
-            <example value="true"/>
-            <sourceReference>
                 <reference value="Patient/patient-1"/>
                 <display value="patient-1.xml"/>
             </sourceReference>
@@ -134,6 +103,37 @@
                 <reference value="Organization/organization-1"/>
                 <display value="Acme Labs"/>
             </sourceReference>
+        </resource>
+        <!--
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="List/PhCP-Intervention-List-Example"/>
+                <display value="PhCP-Intervention-List-Example.xml"/>
+            </sourceReference>
+            <exampleFor>
+                <reference value="StructureDefinition/PhCP-Intervention-List"/>
+                <display value="PhCP Intervention List"/>
+            </exampleFor>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/MedicationRequest-uscore-mo1"/>
+                <display value="MedicationRequest-uscore-mo1.xml"/>
+            </sourceReference>
+        </resource>
+        -->
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Composition/PhCP-Composition-Example"/>
+                <display value="PhCP-Composition-Example.xml"/>
+            </sourceReference>
+            <exampleFor>
+                <reference value="StructureDefinition/PhCP-Composition"/>
+                <display value="PhCP Composition"/>
+            </exampleFor>
         </resource>
     </package>
     <page>
