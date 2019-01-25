@@ -20,13 +20,15 @@
                 <display value="PhCP Intervention List"/>
             </sourceReference>
         </resource>
+        <!--
         <resource>
             <example value="false"/>
             <sourceReference>
                 <reference value="StructureDefinition/PhCP-Intervention-RequestGroup"/>
                 <display value="PhCP Intervention RequestGroup"/>
             </sourceReference>
-        </resource>
+        </resource>  
+        -->
         <resource>
             <example value="false"/>
             <sourceReference>
