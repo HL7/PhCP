@@ -71,7 +71,7 @@
       <short value="Care Plan Detail"></short>
       <type>
         <code value="Reference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CarePlan"/>
+        <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan"/>
       </type>
     </element>
     <element id="Composition.section">
