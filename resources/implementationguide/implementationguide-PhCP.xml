@@ -64,13 +64,15 @@
                 <display value="PhCP Education Procedure"/>
             </sourceReference>
         </resource>
+        <!--
         <resource>
             <example value="false"/>
             <sourceReference>
                 <reference value="StructureDefinition/PhCP-Coverage"/>
                 <display value="PhCP Coverage"/>
             </sourceReference>
-        </resource>
+        </resource> 
+        -->
         <resource>
             <example value="false"/>
             <sourceReference>
