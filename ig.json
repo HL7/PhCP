@@ -1,72 +1,163 @@
 {
-  "tool": "jekyll",
-  "paths": {
-    "resources": [
-      "resources"
-    ],
-    "pages": "pages",
-    "temp": "temp",
-    "output": "output",
-    "qa": "qa",
-    "specification": "http://hl7.org/fhir/STU3/"
-  },
-  "dependencyList": [{
-    "name": "USCore",
-    "location": "http://hl7.org/fhir/us/core/"
-  },{
-    "name": "ccda",
-    "location": "http://build.fhir.org/ig/HL7/ccda-on-fhir/",
-    "source": "ccda-definitions"
-  }],
-  "defaults": {
-    "Any": {
-      "template-format": "instance-template-format.html",
-      "template-base": "instance-template-base.html"
-    },
-    "StructureDefinition": {
-      "template-base": "instance-template-sd.html"
-    }
-  },
-  "canonicalBase": "http://hl7.org/fhir/us/phcp",
-  "source": "implementationguide/implementationguide-PhCP.xml",
-  "sct-edition": "http://snomed.info/sct/731000124108",
-  "special-urls": [],
-  "resources": {
-    "StructureDefinition/PhCP-Composition": {
-      "base": "StructureDefinition-PhCP-Composition.html"
-    },
-    "StructureDefinition/PhCP-Intervention-List": {
-      "base": "StructureDefinition-PhCP-Intervention-List.html"
-    },
-    "StructureDefinition/PhCP-Intervention-RequestGroup": {
-      "base": "StructureDefinition-PhCP-Intervention-RequestGroup.html"
-    },
-    "StructureDefinition/PhCP-Encounter": {
-      "base": "StructureDefinition-PhCP-Encounter.html"
-    },
-    "StructureDefinition/PhCP-CareCoordination": {
-      "base": "StructureDefinition-PhCP-CareCoordination.html"
-    },
-    "StructureDefinition/PhCP-MedicationDispense": {
-      "base": "StructureDefinition-PhCP-MedicationDispense.html"
-    },
-    "StructureDefinition/PhCP-Education-Procedure": {
-      "base": "StructureDefinition-PhCP-Education-Procedure.html"
-    },
-    "StructureDefinition/PhCP-Referral-ProcedureRequest": {
-      "base": "StructureDefinition-PhCP-Referral-ProcedureRequest.html"
-    },
-    "StructureDefinition/PhCP-Coverage": {
-      "base": "StructureDefinition-PhCP-Coverage.html"
-    },
-    "ValueSet/2.16.840.1.113883.11.20.9.34": {
-      "base": "ValueSet-2.16.840.1.113883.11.20.9.34.html" 
-    },
-    "Composition/PhCP-Composition-Example": {
-      "base": "Composition-PhCP-Composition-Example.html"
-    },
-    "Composition/PhCP-Intervention-List-Example": {
-      "base": "PhCP-Intervention-List-Example.html"
-    }
-  }
+	"tool": "jekyll",
+	"source": "implementationguide/PhCP.xml",
+	"npm-name": "PhCP-npm",
+	"license": "CC0-1.0",
+	"paths": {
+		"qa": "generated_output/qa",
+		"temp": "generated_output/temp",
+		"output": "output",
+		"txCache": "generated_output/txCache",
+		"specification": "http://hl7.org/fhir/STU3",
+		"pages": [
+			"framework",
+			"source/pages"
+		],
+		"resources": [
+			"source/resources"
+		]
+	},
+	"pages": [
+		"pages"
+	],
+	"extension-domains": [
+		"https://trifolia-on-fhir.lantanagroup.com"
+	],
+	"allowed-domains": [
+		"https://trifolia-on-fhir.lantanagroup.com"
+	],
+	"sct-edition": "http://snomed.info/sct/731000124108",
+	"canonicalBase": "http://hl7.org/fhir/us/phcp",
+	"defaults": {
+		"Location": {
+			"template-base": "ex.html"
+		},
+		"ProcedureRequest": {
+			"template-base": "ex.html"
+		},
+		"Organization": {
+			"template-base": "ex.html"
+		},
+		"MedicationStatement": {
+			"template-base": "ex.html"
+		},
+		"SearchParameter": {
+			"template-base": "base.html"
+		},
+		"StructureDefinition": {
+			"template-mappings": "sd-mappings.html",
+			"template-base": "sd.html",
+			"template-defns": "sd-definitions.html"
+		},
+		"Immunization": {
+			"template-base": "ex.html"
+		},
+		"Patient": {
+			"template-base": "ex.html"
+		},
+		"StructureMap": {
+			"content": false,
+			"script": false,
+			"template-base": "ex.html",
+			"profiles": false
+		},
+		"ConceptMap": {
+			"template-base": "base.html"
+		},
+		"Practitioner": {
+			"template-base": "ex.html"
+		},
+		"OperationDefinition": {
+			"template-base": "base.html"
+		},
+		"CodeSystem": {
+			"template-base": "base.html"
+		},
+		"Communication": {
+			"template-base": "ex.html"
+		},
+		"Any": {
+			"template-format": "format.html",
+			"template-base": "base.html"
+		},
+		"PractitionerRole": {
+			"template-base": "ex.html"
+		},
+		"ValueSet": {
+			"template-base": "base.html"
+		},
+		"CapabilityStatement": {
+			"template-base": "base.html"
+		},
+		"Observation": {
+			"template-base": "ex.html"
+		}
+	},
+	"resources": {
+		"StructureDefinition/PhCP-Composition": {
+			"base": "StructureDefinition-PhCP-Composition.html",
+			"defns": "StructureDefinition-PhCP-Composition-definitions.html"
+		},
+		"StructureDefinition/PhCP-Intervention-List": {
+			"base": "StructureDefinition-PhCP-Intervention-List.html",
+			"defns": "StructureDefinition-PhCP-Intervention-List-definitions.html"
+		},
+		"StructureDefinition/PhCP-MedicationDispense": {
+			"base": "StructureDefinition-PhCP-MedicationDispense.html",
+			"defns": "StructureDefinition-PhCP-MedicationDispense-definitions.html"
+		},
+		"StructureDefinition/PhCP-CareCoordination": {
+			"base": "StructureDefinition-PhCP-CareCoordination.html",
+			"defns": "StructureDefinition-PhCP-CareCoordination-definitions.html"
+		},
+		"StructureDefinition/PhCP-Referral-ProcedureRequest": {
+			"base": "StructureDefinition-PhCP-Referral-ProcedureRequest.html",
+			"defns": "StructureDefinition-PhCP-Referral-ProcedureRequest-definitions.html"
+		},
+		"StructureDefinition/PhCP-Education-Procedure": {
+			"base": "StructureDefinition-PhCP-Education-Procedure.html",
+			"defns": "StructureDefinition-PhCP-Education-Procedure-definitions.html"
+		},
+		"ValueSet/2.16.840.1.113883.11.20.9.34": {
+			"base": "ValueSet-2.16.840.1.113883.11.20.9.34.html",
+			"defns": "ValueSet-2.16.840.1.113883.11.20.9.34-definitions.html"
+		},
+		"StructureDefinition/PhCP-Coverage": {
+			"base": "StructureDefinition-PhCP-Coverage.html",
+			"defns": "StructureDefinition-PhCP-Coverage-definitions.html"
+		},
+		"Patient/patient-phcp": {
+			"base": "Patient-patient-phcp.html",
+			"defns": "Patient-patient-phcp-definitions.html"
+		},
+		"Practitioner/practitioner-phcp": {
+			"base": "Practitioner-practitioner-phcp.html",
+			"defns": "Practitioner-practitioner-phcp-definitions.html"
+		},
+		"RelatedPerson/related-person-phcp": {
+			"base": "RelatedPerson-related-person-phcp.html",
+			"defns": "RelatedPerson-related-person-phcp-definitions.html"
+		},
+		"Organization/organization-phcp": {
+			"base": "Organization-organization-phcp.html",
+			"defns": "Organization-organization-phcp-definitions.html"
+		},
+		"Composition/PhCP-Composition-Example": {
+			"base": "Composition-PhCP-Composition-Example.html",
+			"defns": "Composition-PhCP-Composition-Example-definitions.html"
+		}
+	},
+	"version": "3.0.1",
+	"dependencyList": [
+		{
+			"location": "http://hl7.org/fhir/us/ccda",
+			"name": "ccda",
+			"version": "1.0.0"
+		},
+		{
+			"location": "http://hl7.org/fhir/us/core",
+			"name": "uscore",
+			"version": "2.0.0"
+		}
+	]
 }
